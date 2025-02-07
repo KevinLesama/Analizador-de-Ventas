@@ -8,7 +8,7 @@ from sklearn.datasets import make_regression
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-data = pd.read_csv(r"D:\HDD\proyectos\python\frameworks\todo_junto\proyect2\src\supermarket_sales.csv")
+data = pd.read_csv("supermarket_sales.csv")
 #pd.set_option('display.max_columns', None)
 #print(data)
 
