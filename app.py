@@ -9,6 +9,7 @@ from sklearn.datasets import make_regression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 data = pd.read_csv("supermarket_sales.csv")
+
 #pd.set_option('display.max_columns', None)
 #print(data)
 
@@ -24,7 +25,7 @@ def Comparar_ventas_de_las_sucursales():
    nombres = ['Yangon', 'Mandalay', 'Naypyitaw']
    ganancias = [gananciaYangon, gananciaMandalay, gananciaNaypyitaw]
    fig, axs=plt.subplots(1,2, figsize= (10, 8))
-   income_ticks = list(range(0, 140, 5))
+   
    axs[0].bar(nombres, ganancias)  # Asegúrate de que ganancias no sea demasiado pequeña
    axs[0].set_ylabel("Income in USD")
    axs[0].set_yticks(range(0, int(max(ganancias)) + 3000, 3000))
@@ -72,7 +73,7 @@ def prediccion_de_ventas_futuras():
    data['Date'] = pd.to_datetime(data['Date'])
 
    # Crear nuevas columnas para mes y día de la semana
-   data['Month'] = data['Date'].dt.month
+   data['Month'] =data['Date'].dt.month
    data['Weekday'] = data['Date'].dt.weekday
    #extrae mes y semana de la columna date
 
@@ -135,6 +136,7 @@ def prediccion_de_ventas_futuras():
    feature_importance = feature_importance.sort_values(by='Coefficient', ascending=False)
    print(feature_importance)
    #a aca vemos qué variables influyen más en la predicción de ventas.
+   data = pd.read_csv("supermarket_sales.csv")
 
 
 
